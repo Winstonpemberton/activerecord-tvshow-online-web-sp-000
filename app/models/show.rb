@@ -13,7 +13,7 @@ class Show < ActiveRecord::Base
 
   def Show::least_popular_show
     minimum = Show::lowest_rating
-    Show.find_by(rating = minimum.to_s)
+    Show.find(rating = minimum.to_s)
   end
 
   def Show::ratings_sum
@@ -22,5 +22,9 @@ class Show < ActiveRecord::Base
 
   def Show::popular_shows
     Show.where("rating > 5")
+  end
+
+  def Show::shows_by_alphabetical_order
+
   end
 end
