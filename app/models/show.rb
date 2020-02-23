@@ -15,4 +15,7 @@ class Show < ActiveRecord::Base
     minimum = Show::lowest_rating
     Show.find_by(rating = minimum.to_s)
   end
+
+  def Show::ratings_sum
+    Show.sum("rating")
 end
